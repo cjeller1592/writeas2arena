@@ -33,9 +33,7 @@ def getBlock(id):
     uri = 'https://api.are.na/v2/blocks/' + id
 
     try:
-        r = requests.get(uri, headers={"Authorization": "Bearer %s" % auth_token,
-            "Content-Type": "application/json"}
-                )
+        r = requests.get(uri)
 
     except Exception as e:
         print "Exception in getBlock: %s" % e
