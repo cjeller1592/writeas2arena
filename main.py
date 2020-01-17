@@ -1,6 +1,6 @@
 import json
 import requests
-from writeas import NewClient
+from writeas import client
 
 from settings import auth_token, w_token
 from arena import getBlock
@@ -8,7 +8,7 @@ from arena import getBlock
 
 
 def block2Post(id):
-    c = NewClient()
+    c = client()
     c.setToken(w_token)
 
     block = getBlock(id)
@@ -21,7 +21,7 @@ def block2Post(id):
     return post
 
 def post2Block(id, channel):
-    c = NewClient()
+    c = client()
     c.setToken(w_token)
 
     post = c.retrievePost(id)
